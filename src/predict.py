@@ -11,7 +11,7 @@ def predict(model: nn.Module, input_sequence: torch.Tensor, lookback: int) -> fl
     model.eval()
     with torch.no_grad():
         input_sequence = input_sequence.unsqueeze(0).to(next(model.parameters()).device) 
-        pred = model(input_sequence)  # (1, 1)
+        pred = model(input_sequence)  
     return pred.item()
 
 
